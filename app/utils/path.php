@@ -21,6 +21,6 @@ class path
      * @return mixed
      */
     public function getpath() {
-        return exec('php', $this->path);
+        return passthru('php '.$this->path);
     }
 }
