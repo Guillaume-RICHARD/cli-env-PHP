@@ -1,5 +1,5 @@
 /doc/
-/cli/
+/scripts/
 /vendor/
 composer.lock
 .idea
