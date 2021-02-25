@@ -20,7 +20,9 @@ class path
     /**
      * @return mixed
      */
-    public function getpath() {
-        return passthru('php '.$this->path);
+    public function getpath($args) {
+        $args = implode(" ",$args);
+
+        return passthru('php '.$this->path." ".$args);
     }
 }

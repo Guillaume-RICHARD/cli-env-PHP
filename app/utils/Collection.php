@@ -2,7 +2,10 @@
 
 namespace App\utils;
 
-
+/**
+ * Class Collection
+ * @package App\utils
+ */
 class Collection implements \IteratorAggregate, \ArrayAccess {
     public $items;
 
@@ -60,6 +63,17 @@ class Collection implements \IteratorAggregate, \ArrayAccess {
         }
         return new Collection($results);
     }
+
+    /**
+     * @param $key
+     * @param $value
+     * @return false|int|string
+     */
+    public function search($key, $value) {
+        return array_search($value, array_column($this->items, $key));
+    }
+
+
 
     /**
      * Création d'une liste séparé par un caractère spécifique
