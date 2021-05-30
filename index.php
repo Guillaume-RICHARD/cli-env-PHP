@@ -14,9 +14,6 @@ $files = new RegexIterator($files, '/^.+\.php/i', RecursiveRegexIterator::GET_MA
 
 foreach($files as $path => $value){
     if (strpos($path, $argv[1])) {
-        unset($argv[0],$argv[1]);
-        sort($argv);
-
         $script = new \App\utils\path($path);
         $script->getpath($argv);
     }
